@@ -1,4 +1,5 @@
 import React,{Fragment,useEffect,useState} from 'react';
+import EditTodo from './EditTodo'
 const ListTodos=()=>{
     const [task_name,setTask]=useState([]);
 
@@ -51,7 +52,7 @@ const ListTodos=()=>{
       {task_name.map(task=>(
           <tr key={task.id}>
         <td>{task.task_name}</td>
-        <td>Edit</td>
+        <td><EditTodo task={task}/></td>
         <td><button className='btn btn-danger' onClick={()=>deleteTask(task.id)}>Delete</button></td>
         </tr>
       ))}
